@@ -85,6 +85,7 @@ In order to run this project you need:
  - Laptop/Desktop.
  - Internet.
  - Ruby.
+ - Rails.
  - Vs Code.
 
 ```
@@ -100,7 +101,7 @@ Clone this repository to your desired folder:
 
 To run the project, execute the following command:
 
-- ./main.rb.
+- rails server.
 
 ### Run tests
 
@@ -113,10 +114,7 @@ To run the project, execute the following command:
 ### Deployment
 
 - Render.
-
-You can deploy this project using:
-
-- Netlify
+- Netlify.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
