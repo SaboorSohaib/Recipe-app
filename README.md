@@ -112,6 +112,8 @@ To run the project, execute the following command:
 
 ### Deployment
 
+- Render.
+
 You can deploy this project using:
 
 - Netlify
