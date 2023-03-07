@@ -320,3 +320,20 @@ FOREIGN KEY ("foods_id")
   [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(693931032017452950)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (24.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(693931032017452950)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameColumnsName (20230307141457)
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "foods" RENAME COLUMN "users_id" TO "user_id"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER INDEX "index_foods_on_users_id" RENAME TO "index_foods_on_user_id"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "recipes" RENAME COLUMN "users_id" TO "user_id"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER INDEX "index_recipes_on_users_id" RENAME TO "index_recipes_on_user_id"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "recipe_foods" RENAME COLUMN "foods_id" TO "food_id"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER INDEX "index_recipe_foods_on_foods_id" RENAME TO "index_recipe_foods_on_food_id"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "recipe_foods" RENAME COLUMN "recipes_id" TO "recipe_id"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER INDEX "index_recipe_foods_on_recipes_id" RENAME TO "index_recipe_foods_on_recipe_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230307141457"]]
+  [1m[36mTRANSACTION (21.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(693931032017452950)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
