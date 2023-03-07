@@ -6,8 +6,6 @@
 
 </div>
 
-<!-- TABLE OF CONTENTS -->
-
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
@@ -31,12 +29,10 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-<!-- PROJECT DESCRIPTION -->
-
 
 # 📖 Ruby Capstone project <a name="about-project"></a>
 
-> Ruby Capstone project a command line base project where user can add books, albums, and games.
+> The Recipe app keeps track of all your recipes, ingredients, and inventory. It allows you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -68,22 +64,12 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **We use OOP concept**
-- **Users can add different books, albums and games and can see them back**
-- **We have database for our data too**
+- **Creating a recipe**
+- **Generating a shopping list**
+- **Sharing recipes to the public**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link Comming Soon!]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -108,7 +94,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
  - mkdir my-folder
  - cd my-folder
- - git clone [(https://github.com/SaboorSohaib/Ruby-Capstone.git)]
+ - git clone [(git@github.com:SaboorSohaib/Recipe-app.git)]
 
 ### Usage
 
@@ -155,11 +141,9 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] - **Add new movie**
-- [ ] - **Add new source**
-- [ ] - **Add new Music album**
-- [ ] - **List all music albums**
-
+- [ ] - **Keep track of all your recipes, ingredient, and inventory**
+- [ ] - **allows you to save ingredients, keep track of what you have, create recipes, and generate a shopping**
+- [ ] - **Allows you to make the recipes public so anyone can access them**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -169,7 +153,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/SaboorSohaib/Recipe-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -185,8 +169,7 @@ If you like this project you can fork it.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank... <a href="https://www.flaticon.com/free-icons/planet" title="planet icons">Planet icons created by Freepik - Flaticon</a>
-
+I would like to thank... <a href="https://www.microverse.org/?gclid=CjwKCAiArY2fBhB9EiwAWqHK6s-2-x4d57Pghz47XT1BgsYuF81ZprM-k-IwzI0_L96nV0SQ93A8ExoCVnQQAvD_BwE" title="planet icons">Microverse for giving me this opportunity to build this project</a>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -195,7 +178,5 @@ I would like to thank... <a href="https://www.flaticon.com/free-icons/planet" ti
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
