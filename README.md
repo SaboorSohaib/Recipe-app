@@ -149,14 +149,6 @@ You can deploy this project using:
 - LinkedIn: [![ayodeji-abidemi](https://img.shields.io/badge/-AyodejiAbidemi-white?logo=LinkedIn&logoColor=181717&style=plastic)](https://linkedin.com/in/ayodeji-abidemi)
 
 
-**Rashid Menhas**
-
-- GitHub: [![RashidMenhas](https://img.shields.io/badge/-RashidMenhas-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/RashidMenhas)
-- Twitter: [![Rashid Menhas](https://img.shields.io/badge/-RashidMenhas-blue?logo=Twitter&logoColor=skyBlue&style=plastic)](https://twitter.com/RashidM83664789)
-- LinkedIn: [![Rashid Menhas](https://img.shields.io/badge/-RashidMenhas-white?logo=LinkedIn&logoColor=181717&style=plastic)](https://www.linkedin.com/in/rashid-menhas/)
-
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
