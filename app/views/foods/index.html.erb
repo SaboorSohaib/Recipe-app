@@ -1,2 +1,21 @@
-<h1>Foods#index</h1>
-<p>Find me in app/views/foods/index.html.erb</p>
+<section class="food-section">
+    <div class="table-header">
+            <p class="p1">Food</p>
+            <p class="p2">Measurement Unit</p>
+            <p class="p3">Unit Price</p>
+            <p class="p4">Quantity</p>
+            <p class="p5">Action</p>
+    </div>
+    <ul class="table-data">
+    <%@foods.each do |food|%>
+      <li>
+            <div><%= food.name %></div>
+            <div><%= food.measurement_unit %></div>
+            <div>$<%= food.price %></div>
+            <div><%= food.quantity %>g</div>
+            <button>Delete</button>
+    
+      </li>
+    <%end%>
+    </ul>
+</section>
