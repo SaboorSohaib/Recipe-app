@@ -1,27 +1,7 @@
-<section class="food-section">
-    <div class="table-header">
-            <p class="p1">Food</p>
-            <p class="p2">Measurement Unit</p>
-            <p class="p3">Unit Price</p>
-            <p class="p4">Quantity</p>
-            <p class="p5">Action</p>
-    </div>
-    <ul class="table-data">
-    <%@foods.each do |food|%>
-      <li>
-            <div><%= food.name %></div>
-            <div><%= food.measurement_unit %></div>
-            <div>$<%= food.price %></div>
-            <div><%= food.quantity %>g</div>
-            <button>Delete</button>
-    
-      </li>
-    <%end%>
-    </ul>
-</section>
-
-<%= link_to  "Add New Food", new_user_food_path%>
-
+<h1>Welcome to Recipe App</h1>
+you are logged in as: <%= current_user.email %>
+<%= button_to "Sign Out", destroy_user_session_path, method: :delete, data: {turbo: false}, class: 'sign-out-btn' %>
+<%= link_to  "Add New Food", new_user_foods_path%>
 <table>
     <tr>
         <th>Food</th>
@@ -36,7 +16,8 @@
             <td><%= food.measurement_unit %></td>
             <td><%= food.price %></td>
             <td><%= food.quantity %></td>
-            <td><%= link_to "Delete" %></td>
+            <td><%= link_to "Delete"%></td>
         </tr>
     <%end%>
 </table>
+<%# ,user_food_path(user_id: current_user.id, id: food.id), method: :delete %>
