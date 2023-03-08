@@ -19,3 +19,24 @@
     <%end%>
     </ul>
 </section>
+
+<%= link_to  "Add New Food", new_user_food_path%>
+
+<table>
+    <tr>
+        <th>Food</th>
+        <th>Measurement Unit</th>
+        <th>Unit Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    <% @foods.each do |food|%>
+        <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td><%= food.price %></td>
+            <td><%= food.quantity %></td>
+            <td><%= link_to "Delete" %></td>
+        </tr>
+    <%end%>
+</table>
