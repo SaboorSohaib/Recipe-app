@@ -13,7 +13,6 @@ class FoodsController < ApplicationController
     redirect_to user_index_path(user_id: current_user.id) if @food.save
   end
 
-
   private
 
   def foods_params
