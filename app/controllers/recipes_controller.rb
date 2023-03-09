@@ -34,12 +34,14 @@ class RecipesController < ApplicationController
     redirect_to user_recipes_path(params[:user_id])
   end
 
-  private
+  def public_recipes
+    @recipes = Recipe.where(public: true)
+  end
 
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
   end
-  
+
   # Use callbacks to share common setup
   def find_recipe
     @recipe = Recipe.find(params[:id])
