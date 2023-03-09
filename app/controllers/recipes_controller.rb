@@ -1,2 +1,6 @@
 class RecipesController < ApplicationController
-end
+    # GET /recipes
+    def index
+      @recipes = Recipe.all
+    end
+  end
