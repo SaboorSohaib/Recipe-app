@@ -8559,3 +8559,132 @@ Processing by FoodController#new as HTML
 Completed 200 OK in 32ms (Views: 23.7ms | ActiveRecord: 0.4ms | Allocations: 6379)
 
 
+Started GET "/" for 127.0.0.1 at 2023-03-09 14:38:46 +0430
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 30.1ms | Allocations: 910)
+  Rendered layout layouts/application.html.erb (Duration: 706.1ms | Allocations: 41567)
+Completed 200 OK in 1025ms (Views: 719.5ms | ActiveRecord: 15.8ms | Allocations: 55906)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-03-09 14:38:52 +0430
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 74ms (ActiveRecord: 0.7ms | Allocations: 4081)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-09 14:38:52 +0430
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms | Allocations: 344)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-03-09 14:38:52 +0430
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 4.4ms | Allocations: 776)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 78.8ms | Allocations: 3188)
+  Rendered layout layouts/application.html.erb (Duration: 89.2ms | Allocations: 5411)
+Completed 200 OK in 106ms (Views: 100.0ms | ActiveRecord: 0.0ms | Allocations: 6709)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-03-09 14:38:59 +0430
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"abdulsaboorsohaib@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abdulsaboorsohaib@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 855ms (ActiveRecord: 0.7ms | Allocations: 3631)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-09 14:39:00 +0430
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 311)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 2432)
+Completed 200 OK in 29ms (Views: 20.0ms | ActiveRecord: 1.3ms | Allocations: 4083)
+
+
+Started GET "/users/1/food" for 127.0.0.1 at 2023-03-09 14:39:02 +0430
+Processing by FoodController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering food/index.html.erb within layouts/application
+  [1m[36mFood Load (0.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/food/index.html.erb:12
+  Rendered food/index.html.erb within layouts/application (Duration: 79.2ms | Allocations: 6901)
+  Rendered layout layouts/application.html.erb (Duration: 115.9ms | Allocations: 9101)
+Completed 200 OK in 227ms (Views: 112.9ms | ActiveRecord: 7.9ms | Allocations: 13520)
+
+
+Started GET "/users/1/food/new" for 127.0.0.1 at 2023-03-09 14:39:09 +0430
+Processing by FoodController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering food/new.html.erb within layouts/application
+  Rendered food/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 1817)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 3937)
+Completed 200 OK in 31ms (Views: 20.7ms | ActiveRecord: 0.7ms | Allocations: 5622)
+
+
+Started POST "/users/1/food" for 127.0.0.1 at 2023-03-09 14:39:27 +0430
+Processing by FoodController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "food"=>{"name"=>"Eba", "measurement_unit"=>"grams", "price"=>"60", "quantity"=>"3"}, "commit"=>"Submit", "user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/food_controller.rb:14:in `create'
+  [1m[36mFood Create (1.8ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Eba"], ["measurement_unit", "grams"], ["price", 60], ["quantity", 3], ["created_at", "2023-03-09 10:09:27.623466"], ["updated_at", "2023-03-09 10:09:27.623466"], ["user_id", 1]]
+  ↳ app/controllers/food_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (24.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/food_controller.rb:14:in `create'
+Redirected to http://127.0.0.1:3000/users/1/food
+Completed 302 Found in 50ms (ActiveRecord: 26.8ms | Allocations: 4825)
+
+
+Started GET "/users/1/food" for 127.0.0.1 at 2023-03-09 14:39:27 +0430
+Processing by FoodController#index as TURBO_STREAM
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering food/index.html.erb within layouts/application
+  [1m[36mFood Load (0.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/food/index.html.erb:12
+  Rendered food/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1261)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 3380)
+Completed 200 OK in 37ms (Views: 23.4ms | ActiveRecord: 2.2ms | Allocations: 5014)
+
+
+Started GET "/users/1/food" for 127.0.0.1 at 2023-03-09 14:40:18 +0430
+Processing by FoodController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering food/index.html.erb within layouts/application
+  [1m[36mFood Load (2.5ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/food/index.html.erb:12
+  Rendered food/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1525)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 3956)
+Completed 200 OK in 45ms (Views: 31.1ms | ActiveRecord: 4.6ms | Allocations: 6057)
+
+
+Started GET "/users/1/food" for 127.0.0.1 at 2023-03-09 14:40:45 +0430
+Processing by FoodController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering food/index.html.erb within layouts/application
+  [1m[36mFood Load (1.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/food/index.html.erb:12
+  Rendered food/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 1529)
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 3993)
+Completed 200 OK in 48ms (Views: 34.8ms | ActiveRecord: 3.4ms | Allocations: 6113)
+
+

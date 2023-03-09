@@ -5,7 +5,7 @@
     <tr>
         <th>Food</th>
         <th>Measurement Unit</th>
-        <th>Unit Price</th>
+        <th><span>$</span>Unit Price</th>
         <th>Quantity</th>
         <th>Action</th>
     </tr>
@@ -13,7 +13,7 @@
         <tr>
             <td><%= food.name %></td>
             <td><%= food.measurement_unit %></td>
-            <td><%= food.price %></td>
+            <td><span>$</span><%= food.price %></td>
             <td><%= food.quantity %></td>
             <td><%= button_to "Delete", user_food_path(user_id: current_user.id, id: food.id), method: :delete%></td>
         </tr>
