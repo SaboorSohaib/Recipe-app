@@ -259,7 +259,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   letter_opener
-  pg (~> 1.1)
+  pg (~> 1.4.6)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
   rails-controller-testing

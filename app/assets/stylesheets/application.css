@@ -13,3 +13,57 @@
  *= require_tree .
  *= require_self
  */
+.table-header {
+  display: flex;
+  gap: 10px;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.add-btn {
+  display: flex;
+  justify-content: end;
+  margin-right: 30px;
+  margin-top: 30px;
+}
+
+.foods-h1 {
+  text-align: center;
+}
+
+.table-food {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+.table {
+  border: 2px solid black;
+  padding: 20px;
+  margin-top: 10px;
+  width: 600px;
+}
+
+th {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+td,
+tr {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.form-h2 {
+  text-align: center;
+}
+
+.food-section {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
