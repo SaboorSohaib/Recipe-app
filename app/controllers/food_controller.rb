@@ -1,4 +1,4 @@
-class FoodsController < ApplicationController
+class FoodController < ApplicationController
   def index
     @foods = current_user.foods
   end
@@ -11,9 +11,14 @@ class FoodsController < ApplicationController
   def create
     @user = current_user
     @food = @user.foods.new(food_params)
-    redirect_to user_foods_index_path(user_id: @user.id) if @food.save
+    redirect_to user_food_index_path(user_id: current_user.id) if @food.save
   end
 
+  def destroy
+    @food = Food.find(params[:id]).destroy
+    redirect_to user_food_index_path
+  end
+  
   private
 
   def food_params
