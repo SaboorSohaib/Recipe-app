@@ -1,8 +1,19 @@
-<h1>Recipe Show page</h1>
-<p> This is the recipe Show page </p>
-<%# details of the Recipe post %>
-<%# <div>
-<%# < %>
-<%# <div>
-<%# </div> %>
+<h1><%= @recipe.name %></h1>
+<p>Preparation time: <%= @recipe.preparation_time %>hour(s)</p>
+<p>Cooking time: <%= @recipe.cooking_time %>hour(s)</p>
+<p>Public: <%= @recipe.public %></p>
+<p>Steps go here...<p><ul><%= @recipe.description %></ul>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+  </table>
+
 <%= button_to "Back to List of Recipes", user_recipes_path, method: :get%>
