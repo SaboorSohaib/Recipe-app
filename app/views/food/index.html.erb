@@ -1,0 +1,22 @@
+<%= link_to  "Add New Food", new_user_food_path, class:'add-btn'%>
+<h1 class="foods-h1">All Foods</h1>
+<div class="table-food">
+<table class="table">
+    <tr>
+        <th>Food</th>
+        <th>Measurement Unit</th>
+        <th><span>$</span>Unit Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+    </tr>
+    <% @foods.each do |food|%>
+        <tr>
+            <td><%= food.name %></td>
+            <td><%= food.measurement_unit %></td>
+            <td><span>$</span><%= food.price %></td>
+            <td><%= food.quantity %></td>
+            <td><%= button_to "Delete", user_food_path(user_id: current_user.id, id: food.id), method: :delete%></td>
+        </tr>
+    <%end%>
+</table>
+</div>
