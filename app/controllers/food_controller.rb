@@ -18,7 +18,7 @@ class FoodController < ApplicationController
     @food = Food.find(params[:id]).destroy
     redirect_to user_food_index_path
   end
-  
+
   private
 
   def food_params
