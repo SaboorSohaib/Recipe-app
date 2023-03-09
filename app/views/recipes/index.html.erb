@@ -1,0 +1,19 @@
+<h1 align="center">Recipes List</h1>
+
+<% @recipes.each do |recipe| %>
+  <div>
+    <%= link_to recipe_path(recipe.id) do %>
+      <div class="recipe_container card">
+        <div class="card-body">
+          <div class="card-head">
+            <h3 class="card-title">Recipe Name<%= recipe.id %></h3>
+            <a href="#" class="btn btn-primary">REMOVE RECIPE</a>
+          </div>
+          <div class="card-container card-bodiem">
+            <p class="card-text"><%= recipe.description %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
