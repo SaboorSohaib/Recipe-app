@@ -6,6 +6,11 @@ class UsersController < ApplicationController
       @users = User.all
     end
 
+    # GET /users/new
+    def new
+      @user = User.new
+     end
+
     # Use callbacks to share common setup
     def set_user
       @user = User.find(params[:id])
