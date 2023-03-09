@@ -15,13 +15,13 @@ class RecipesController < ApplicationController
   # POST /recipes
   def create
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
 
-    respond_to do |format|
-      if @recipe.save
-        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully created.' }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    if @recipe.save
+      flash[:notice] = 'New Recipe was successfully created'
+      redirect_to user_recipes_path(params[:user_id])
+    else
+      render :new
     end
   end
 
