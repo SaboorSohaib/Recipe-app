@@ -4,19 +4,20 @@
 <br>
 
 <% @recipes.each do |recipe| %>
-  <div>
-    <%= link_to recipe_path(recipe.id) do %>
-      <div class="recipe_container card">
+  <div class= "recipe-container">
+      <div class="card-container card">
         <div class="card-body">
-          <div class="card-head">
-            <h3 class="card-title">Recipe Name<%= recipe.id %></h3>
-            <a href="#" class="btn btn-primary">REMOVE RECIPE</a>
-          </div>
-          <div class="card-container card-bodiem">
+          <div class="card-title card-head">
+
+                    <%= link_to user_recipe_path(current_user, recipe) do %>
+            <h2 class="card-title"><%= recipe.name %></h2>
+          <% end %>
+            <%= button_to "REMOVE RECIPE", user_recipe_path(params[:user_id], recipe), method: :delete %>
+                      </div>
+          <div class="card-description card-bodiem">
             <p class="card-text"><%= recipe.description %></p>
           </div>
         </div>
       </div>
-    <% end %>
-  </div>
+       </div>
 <% end %>
