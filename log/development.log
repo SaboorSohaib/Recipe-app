@@ -1388,3 +1388,11 @@ ActionView::Template::Error (undefined method `name' for nil:NilClass):
     6:   <p>RECIPE ID: <%= @recipe.id %></p>
   
 app/views/recipes/show.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-03-09 05:33:48 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.7ms | Allocations: 494)
+Completed 200 OK in 45ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 3596)
+
+
