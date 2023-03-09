@@ -11058,3 +11058,15 @@ Processing by RecipesController#public_recipes as HTML
 Completed 200 OK in 43ms (Views: 32.7ms | ActiveRecord: 0.7ms | Allocations: 5875)
 
 
+Started GET "/public_recipes" for ::1 at 2023-03-09 15:45:13 +0100
+Processing by RecipesController#public_recipes as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/public_recipes.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."public" = $1[0m  [["public", true]]
+  ↳ app/views/recipes/public_recipes.html.erb:3
+  Rendered recipes/public_recipes.html.erb within layouts/application (Duration: 3.8ms | Allocations: 775)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 3152)
+Completed 200 OK in 27ms (Views: 17.6ms | ActiveRecord: 0.7ms | Allocations: 4845)
+
+

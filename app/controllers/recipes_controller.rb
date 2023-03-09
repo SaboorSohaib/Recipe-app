@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
   end
-  
+
   # POST /recipes
   def create
     @recipe = Recipe.new(recipe_params)
