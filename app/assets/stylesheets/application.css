@@ -26,3 +26,24 @@
   border: 2px solid black;
   padding: 10px;
 }
+
+.add-btn{
+  display: flex;
+  justify-content: end;
+}
+
+.table-food{
+  border: 2px solid black;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+th{
+  padding: 5px;
+  border: 1px solid black;
+}
+
+td,tr{
+  padding: 10px;
+  border: 1px solid black;
+}
