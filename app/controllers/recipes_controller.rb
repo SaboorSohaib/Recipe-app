@@ -29,17 +29,19 @@ class RecipesController < ApplicationController
 
   # DELETE /recipes/1
   def destroy
-    @recipe.destroy
-
-    respond_to do |format|
-      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
-    end
+    @recipe = Recipe.find(params[:id]).destroy
+    flash[:notice] = 'The Recipe was successfully removed'
+    redirect_to user_recipes_path(params[:user_id])
   end
 
   private
 
+  def recipe_params
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
+  end
+  
   # Use callbacks to share common setup
-  def set_recipe
+  def find_recipe
     @recipe = Recipe.find(params[:id])
   end
 end
