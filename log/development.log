@@ -8688,3 +8688,37 @@ Processing by FoodController#index as HTML
 Completed 200 OK in 48ms (Views: 34.8ms | ActiveRecord: 3.4ms | Allocations: 6113)
 
 
+Started GET "/" for 127.0.0.1 at 2023-03-09 15:15:56 +0430
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 10.3ms | Allocations: 1054)
+  Rendered layout layouts/application.html.erb (Duration: 1291.5ms | Allocations: 90347)
+Completed 200 OK in 1429ms (Views: 1309.4ms | ActiveRecord: 14.6ms | Allocations: 107565)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-03-09 15:16:05 +0430
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 212ms (ActiveRecord: 0.7ms | Allocations: 6353)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-09 15:16:05 +0430
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 357)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-03-09 15:16:05 +0430
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 5.3ms | Allocations: 776)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 30.4ms | Allocations: 4017)
+  Rendered layout layouts/application.html.erb (Duration: 67.6ms | Allocations: 6242)
+Completed 200 OK in 81ms (Views: 73.1ms | ActiveRecord: 0.0ms | Allocations: 7821)
+
+
