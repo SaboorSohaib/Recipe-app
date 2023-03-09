@@ -34,4 +34,10 @@ class RecipesController < ApplicationController
       end
     end
   
+    private
+  
+    # Use callbacks to share common setup
+    def set_recipe
+      @recipe = Recipe.find(params[:id])
+    end
   end
