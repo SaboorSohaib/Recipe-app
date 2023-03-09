@@ -10,6 +10,25 @@ class UsersController < ApplicationController
     def new
       @user = User.new
      end
+  
+    # GET /users/1
+    def show; end
+  
+    # GET /users/1/edit
+    def edit; end
+  
+    # POST /users
+    def create
+      @user = User.new(user_params)
+  
+      respond_to do |format|
+        if @user.save
+          format.html { redirect_to user_url(@user), notice: 'User was successfully created.' }
+        else
+          format.html { render :new, status: :unprocessable_entity }
+        end
+      end
+    end
 
     # Use callbacks to share common setup
     def set_user
