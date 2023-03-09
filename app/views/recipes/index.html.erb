@@ -1,5 +1,8 @@
 <h1 align="center">Recipes List</h1>
 
+<button><%= link_to "Add a recipe", new_user_recipe_path %></button>
+<br>
+
 <% @recipes.each do |recipe| %>
   <div>
     <%= link_to recipe_path(recipe.id) do %>
