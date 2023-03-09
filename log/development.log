@@ -1624,3 +1624,540 @@ ActionView::Template::Error (undefined method `name' for nil:NilClass):
     6:   <p>RECIPE ID: <%= @recipe.id %></p>
   
 app/views/recipes/show.html.erb:3
+Started GET "/" for 127.0.0.1 at 2023-03-09 07:02:36 +0100
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 48.3ms | Allocations: 260)
+Completed 200 OK in 68ms (Views: 53.9ms | Allocations: 751)
+
+
+Started GET "/users/:user_id/foods" for 127.0.0.1 at 2023-03-09 07:04:07 +0100
+Processing by FoodsController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  Rendering layout layouts/application.html.erb
+  Rendering foods/index.html.erb within layouts/application
+  Rendered foods/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 92)
+  Rendered layout layouts/application.html.erb (Duration: 154.5ms | Allocations: 15141)
+Completed 200 OK in 176ms (Views: 166.7ms | Allocations: 15811)
+
+
+Started GET "/users/:user_id/recipes" for 127.0.0.1 at 2023-03-09 07:06:37 +0100
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (4.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (Duration: 223.0ms | Allocations: 3796)
+  Rendered layout layouts/application.html.erb (Duration: 240.4ms | Allocations: 6444)
+Completed 200 OK in 305ms (Views: 245.8ms | ActiveRecord: 56.1ms | Allocations: 8136)
+
+
+Started GET "/users/:user_id/recipes/new" for 127.0.0.1 at 2023-03-09 07:06:59 +0100
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>":user_id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 86)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 2621)
+Completed 200 OK in 117ms (Views: 30.9ms | ActiveRecord: 39.2ms | Allocations: 8431)
+
+
+Started GET "/users/:user_id/recipes/:id" for 127.0.0.1 at 2023-03-09 07:07:34 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 985)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1066)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms | Allocations: 1329)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipe.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipe.id %></p>
+  
+app/views/recipes/show.html.erb:3
+Started GET "/users/:user_id/recipes/:id" for 127.0.0.1 at 2023-03-09 07:07:34 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 982)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1063)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 1319)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipe.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipe.id %></p>
+  
+app/views/recipes/show.html.erb:3
+Started GET "/users/:user_id/recipes/:id" for 127.0.0.1 at 2023-03-09 07:07:57 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 97)
+  Rendered layout layouts/application.html.erb (Duration: 34.8ms | Allocations: 2998)
+Completed 200 OK in 54ms (Views: 48.4ms | ActiveRecord: 0.0ms | Allocations: 3759)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-09 07:10:04 +0100
+Processing by UsersController#index as HTML
+Completed 406 Not Acceptable in 300ms (ActiveRecord: 0.0ms | Allocations: 5321)
+
+
+  
+ActionController::MissingExactTemplate (UsersController#index is missing a template for request formats: text/html):
+  
+actionpack (7.0.4.2) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.4.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.4.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4.2) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4.2) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.4.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.4.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4.2) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.2) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.2) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:852:in `call'
+bullet (7.0.7) lib/bullet/rack.rb:14:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.6.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/:user_id/recipes" for 127.0.0.1 at 2023-03-09 07:10:27 +0100
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 796)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 3358)
+Completed 200 OK in 32ms (Views: 23.9ms | ActiveRecord: 0.9ms | Allocations: 3706)
+
+
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (8.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abdulsaboor123@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "abdulsaboor123@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (6.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Abdul Saboor Sohaib"], ["created_at", "2023-03-09 06:15:48.097587"], ["updated_at", "2023-03-09 06:15:48.097587"], ["email", "abdulsaboor123@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2023-03-09 06:15:48.097748"], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+Devise::Mailer#confirmation_instructions: processed outbound mail in 229.0ms
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ayodejiabidemi007@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Ayodeji Abidemi"], ["created_at", "2023-03-09 06:17:21.017964"], ["updated_at", "2023-03-09 06:17:21.017964"], ["email", "ayodejiabidemi007@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2023-03-09 06:17:21.018064"], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+Devise::Mailer#confirmation_instructions: processed outbound mail in 0.9ms
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Create (6.4ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Eba Recipe"], ["preparation_time", 10], ["cooking_time", 15], ["description", "Add hot water into a bowl, add the desired amount of Garri, and stir until it is smooth"], ["public", true], ["created_at", "2023-03-09 06:21:15.684830"], ["updated_at", "2023-03-09 06:21:15.684830"], ["user_id", 2]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Create (0.8ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "preparation_time", "cooking_time", "description", "public", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Samanak"], ["preparation_time", 20], ["cooking_time", 15], ["description", "Samanak is a specially made dish in Afghanistan, it takes 15-20 working days to prepare it, but it is worth the wait."], ["public", true], ["created_at", "2023-03-09 06:26:15.670711"], ["updated_at", "2023-03-09 06:26:15.670711"], ["user_id", 1]]
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+Started GET "/users/:user_id/recipes" for 127.0.0.1 at 2023-03-09 07:27:28 +0100
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (4.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (Duration: 170.6ms | Allocations: 4642)
+  Rendered layout layouts/application.html.erb (Duration: 171.3ms | Allocations: 4723)
+Completed 500 Internal Server Error in 178ms (ActiveRecord: 30.0ms | Allocations: 4991)
+
+
+  
+ActionView::Template::Error (undefined method `recipe_path' for #<ActionView::Base:0x00000000012b38>):
+    2: 
+    3: <% @recipes.each do |recipe| %>
+    4:   <div>
+    5:     <%= link_to recipe_path(recipe.id) do %>
+    6:       <div class="recipe_container card">
+    7:         <div class="card-body">
+    8:           <div class="card-head">
+  
+app/views/recipes/index.html.erb:5
+app/views/recipes/index.html.erb:3
+Started GET "/users/:user_id/recipes/:id" for 127.0.0.1 at 2023-03-09 07:28:02 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 2579)
+Completed 200 OK in 28ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 2858)
+
+
+Started GET "/users/:user_id/recipes/:id" for 127.0.0.1 at 2023-03-09 07:28:02 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 2544)
+Completed 200 OK in 26ms (Views: 22.0ms | ActiveRecord: 0.0ms | Allocations: 2823)
+
+
+Started GET "/users/:user_id/recipes/:id" for 127.0.0.1 at 2023-03-09 07:28:19 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1105)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1187)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms | Allocations: 1924)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipe.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipe.id %></p>
+  
+app/views/recipes/show.html.erb:3
+Started GET "/users/:user_id/recipes/:id" for 127.0.0.1 at 2023-03-09 07:28:54 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1104)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1186)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 1922)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipes.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipes.id %></p>
+  
+app/views/recipes/show.html.erb:3
+Started GET "/users/:user_id/recipes/:id" for 127.0.0.1 at 2023-03-09 07:29:41 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1104)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1186)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 1922)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipe.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipe.id %></p>
+  
+app/views/recipes/show.html.erb:3
+Started GET "/users/:user_id/recipes/:id" for 127.0.0.1 at 2023-03-09 07:30:18 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 929)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 1011)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 1516)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipe.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipe.id %></p>
+  
+app/views/recipes/show.html.erb:3
+Started GET "/users/:user_id/recipes/:id" for 127.0.0.1 at 2023-03-09 07:33:03 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 929)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1011)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 1516)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipe.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipe.id %></p>
+  
+app/views/recipes/show.html.erb:3
+Started GET "/users/1/recipes/:id" for 127.0.0.1 at 2023-03-09 10:38:22 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>":id"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 982)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 1063)
+Completed 500 Internal Server Error in 20ms (Allocations: 1319)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipe.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipe.id %></p>
+  
+app/views/recipes/show.html.erb:3
+Started GET "/users/1/recipes/1" for 127.0.0.1 at 2023-03-09 10:38:31 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 982)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 1063)
+Completed 500 Internal Server Error in 12ms (Allocations: 1319)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipe.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipe.id %></p>
+  
+app/views/recipes/show.html.erb:3
+Started GET "/users/1/recipes/2" for 127.0.0.1 at 2023-03-09 10:39:47 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 982)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 1063)
+Completed 500 Internal Server Error in 18ms (Allocations: 1319)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipe.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipe.id %></p>
+  
+app/views/recipes/show.html.erb:3
+Started GET "/users/1" for 127.0.0.1 at 2023-03-09 10:40:00 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (9.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `set_user'
+Completed 406 Not Acceptable in 330ms (ActiveRecord: 91.2ms | Allocations: 14051)
+
+
+  
+ActionController::MissingExactTemplate (UsersController#show is missing a template for request formats: text/html):
+  
+actionpack (7.0.4.2) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (7.0.4.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (7.0.4.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4.2) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4.2) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.4.2) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.4.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4.2) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.2) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.2) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:852:in `call'
+bullet (7.0.7) lib/bullet/rack.rb:14:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.6.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.3) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/1/recipes/2" for 127.0.0.1 at 2023-03-09 10:40:22 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 984)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1065)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 1321)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipe.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipe.id %></p>
+  
+app/views/recipes/show.html.erb:3
