@@ -4,16 +4,15 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
-  # GET /recipes/1
-  def show
-    @recipe = Recipe.find(params[:id])
-  end
-
   # GET /recipes/new
   def new
     @recipe = Recipe.new
   end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
+  
   # POST /recipes
   def create
     @recipe = Recipe.new(recipe_params)
