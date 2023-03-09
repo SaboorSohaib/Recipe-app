@@ -1,1 +1,41 @@
-<h1>Add New Recipes Form</h1> 
+<h1>Add New Recipe Form</h1>
+
+<%= form_with model: @recipe, url: user_recipes_path(params[:user_id]), method: :post, class: "form" do |form| %>
+  <h2 class="form_title">Add a new Recipe</h2>
+  <section class="form-section">
+    <p class="input-text"><%= form.label :name %>:</p>
+    <%= form.text_field :name,
+    class: "text_input",
+    placeholder: "Write name of recipe..." %>
+  </section>
+
+  <section class="form-section">
+    <p class="number_field"><%= form.label :preparation_time, "Preparation Time" %>:</p>
+    <%= form.number_field :preparation_time,
+    class: "number_field",
+    placeholder: "Write the preparation time..." %>
+  </section>
+
+    <section class="form-section">
+    <p class="number_field"><%= form.label :cooking_time, "Cooking Time" %>:</p>
+    <%= form.number_field :cooking_time,
+    class: "number_field",
+    placeholder: "Write the cooking time..." %>
+  </section>
+
+  <section class="form-section">
+    <p class="text_field"><%= form.label :description %></p>
+    <%= form.text_area :description,
+    class: "text_area",
+    placeholder: "Describe the recipe...", rows: "10" %>
+  </section>
+
+    <section class="form-section">
+    <p class="check_box"><%= form.label :public %></p>
+    <%= form.check_box :public %>
+  </section>
+
+  <section class="form-section">
+    <%= form.submit class: "submit_button" %>
+  </section>
+<% end %>
