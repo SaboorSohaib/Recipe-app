@@ -10360,3 +10360,239 @@ Processing by Devise::SessionsController#new as TURBO_STREAM
 Completed 200 OK in 30ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 4307)
 
 
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-03-09 13:49:10 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ayodejiabidemi007@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ayodejiabidemi007@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 470ms (ActiveRecord: 24.2ms | Allocations: 8402)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-03-09 13:49:14 +0100
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 214)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1401)
+  Rendered layout layouts/application.html.erb (Duration: 129.2ms | Allocations: 16020)
+Completed 200 OK in 136ms (Views: 131.8ms | ActiveRecord: 0.0ms | Allocations: 16957)
+
+
+Started GET "/users/confirmation/new" for 127.0.0.1 at 2023-03-09 13:49:38 +0100
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/confirmations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 20.3ms | Allocations: 220)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 248)
+  Rendered devise/confirmations/new.html.erb within layouts/application (Duration: 64.7ms | Allocations: 1721)
+  Rendered layout layouts/application.html.erb (Duration: 82.0ms | Allocations: 4178)
+Completed 200 OK in 102ms (Views: 93.5ms | ActiveRecord: 0.0ms | Allocations: 4997)
+
+
+Started POST "/users/confirmation" for 127.0.0.1 at 2023-03-09 13:49:48 +0100
+Processing by Devise::ConfirmationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ayodejiabidemi007@gmail.com"}, "commit"=>"Resend confirmation instructions"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."unconfirmed_email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["unconfirmed_email", "ayodejiabidemi007@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ayodejiabidemi007@gmail.com"], ["LIMIT", 1]]
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (Duration: 14.6ms | Allocations: 285)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 259.0ms
+Delivered mail 6409d5ee75726_846838e07582d@Demix007.mail (919.3ms)
+Date: Thu, 09 Mar 2023 13:49:50 +0100
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: ayodejiabidemi007@gmail.com
+Message-ID: <6409d5ee75726_846838e07582d@Demix007.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome ayodejiabidemi007@gmail.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=ndsyTEzgeEYf5pxHgS9z">Confirm my account</a></p>
+
+Redirected to http://127.0.0.1:3000/users/sign_in
+Completed 303 See Other in 3205ms (ActiveRecord: 1.5ms | Allocations: 56005)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-03-09 13:49:52 +0100
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 186)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1285)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 3693)
+Completed 200 OK in 45ms (Views: 37.4ms | ActiveRecord: 0.0ms | Allocations: 4356)
+
+
+Started GET "/users/confirmation?confirmation_token=[FILTERED]" for ::1 at 2023-03-09 13:49:56 +0100
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["confirmation_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (9.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "confirmed_at" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2023-03-09 12:49:56.554004"], ["confirmed_at", "2023-03-09 12:49:56.551981"], ["id", 2]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 43ms (ActiveRecord: 12.7ms | Allocations: 5629)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-03-09 13:49:56 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 186)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 3656)
+Completed 200 OK in 61ms (Views: 48.6ms | ActiveRecord: 0.0ms | Allocations: 4282)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-03-09 13:50:07 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ayodejiabidemi007@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ayodejiabidemi007@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 302ms (ActiveRecord: 0.7ms | Allocations: 2589)
+
+
+Started GET "/" for ::1 at 2023-03-09 13:50:08 +0100
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 17.7ms | Allocations: 558)
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 3014)
+Completed 200 OK in 62ms (Views: 50.2ms | ActiveRecord: 0.4ms | Allocations: 5188)
+
+
+Started GET "/users/:user_id/recipes" for ::1 at 2023-03-09 13:50:37 +0100
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (4.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:3
+  Rendered recipes/index.html.erb within layouts/application (Duration: 61.3ms | Allocations: 6023)
+  Rendered layout layouts/application.html.erb (Duration: 62.9ms | Allocations: 6105)
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 33.6ms | Allocations: 9517)
+
+
+  
+ActionView::Template::Error (undefined method `recipe_path' for #<ActionView::Base:0x00000000012bd8>):
+    2: 
+    3: <% @recipes.each do |recipe| %>
+    4:   <div>
+    5:     <%= link_to recipe_path(recipe.id) do %>
+    6:       <div class="recipe_container card">
+    7:         <div class="card-body">
+    8:           <div class="card-head">
+  
+app/views/recipes/index.html.erb:5
+app/views/recipes/index.html.erb:3
+Started GET "/users/:user_id/recipes/:id" for ::1 at 2023-03-09 13:51:13 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 10.1ms | Allocations: 1108)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 1189)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.6ms | Allocations: 2917)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipe.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipe.id %></p>
+  
+app/views/recipes/show.html.erb:3
+Started GET "/users/:user_id/recipes/:id" for ::1 at 2023-03-09 13:52:49 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1104)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1186)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.7ms | Allocations: 3323)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Recipe Show page</h1>
+    2: <div>
+    3:   <p>RECIPE NAME: <%= @recipe.name %></p>
+    4: </div>
+    5: <div>
+    6:   <p>RECIPE ID: <%= @recipe.id %></p>
+  
+app/views/recipes/show.html.erb:3
+Started GET "/users/:user_id/recipes/:id" for ::1 at 2023-03-09 13:53:07 +0100
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/show.html.erb within layouts/application
+  Rendered recipes/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 97)
+  Rendered layout layouts/application.html.erb (Duration: 32.0ms | Allocations: 2839)
+Completed 200 OK in 60ms (Views: 45.0ms | ActiveRecord: 0.4ms | Allocations: 5011)
+
+
+Started GET "/users/:user_id/food" for ::1 at 2023-03-09 13:53:55 +0100
+Processing by FoodController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering food/index.html.erb within layouts/application
+  [1m[36mFood Load (3.7ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/food/index.html.erb:12
+  Rendered food/index.html.erb within layouts/application (Duration: 79.2ms | Allocations: 2779)
+  Rendered layout layouts/application.html.erb (Duration: 105.1ms | Allocations: 5250)
+Completed 200 OK in 317ms (Views: 121.0ms | ActiveRecord: 6.1ms | Allocations: 11423)
+
+
+Started GET "/users/:user_id/food/new" for ::1 at 2023-03-09 13:54:30 +0100
+Processing by FoodController#new as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering food/new.html.erb within layouts/application
+  Rendered food/new.html.erb within layouts/application (Duration: 66.9ms | Allocations: 1856)
+  Rendered layout layouts/application.html.erb (Duration: 79.2ms | Allocations: 4233)
+Completed 200 OK in 101ms (Views: 81.6ms | ActiveRecord: 2.9ms | Allocations: 8722)
+
+
+Started POST "/users/:user_id/food" for ::1 at 2023-03-09 13:54:55 +0100
+Processing by FoodController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "food"=>{"name"=>"Rice", "measurement_unit"=>"grams", "price"=>"40", "quantity"=>"10"}, "commit"=>"Submit", "user_id"=>":user_id"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/food_controller.rb:14:in `create'
+  [1m[36mFood Create (6.4ms)[0m  [1m[32mINSERT INTO "foods" ("name", "measurement_unit", "price", "quantity", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Rice"], ["measurement_unit", "grams"], ["price", 40], ["quantity", 10], ["created_at", "2023-03-09 12:54:56.094488"], ["updated_at", "2023-03-09 12:54:56.094488"], ["user_id", 2]]
+  ↳ app/controllers/food_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/food_controller.rb:14:in `create'
+Redirected to http://localhost:3000/users/2/food
+Completed 302 Found in 217ms (ActiveRecord: 7.8ms | Allocations: 14020)
+
+
+Started GET "/users/2/food" for ::1 at 2023-03-09 13:54:56 +0100
+Processing by FoodController#index as TURBO_STREAM
+  Parameters: {"user_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering food/index.html.erb within layouts/application
+  [1m[36mFood Load (0.6ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/food/index.html.erb:12
+  Rendered food/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1049)
+  Rendered layout layouts/application.html.erb (Duration: 31.9ms | Allocations: 3426)
+Completed 200 OK in 48ms (Views: 37.0ms | ActiveRecord: 1.0ms | Allocations: 5173)
+
+
