@@ -24,4 +24,14 @@ class RecipesController < ApplicationController
         end
       end
     end
+  
+    # DELETE /recipes/1 
+    def destroy
+      @recipe.destroy
+  
+      respond_to do |format|
+        format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
+      end
+    end
+  
   end
