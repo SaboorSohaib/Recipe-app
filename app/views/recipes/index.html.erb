@@ -9,7 +9,7 @@
         <div class="card-body">
           <div class="card-title card-head">
 
-                    <%= link_to user_recipe_path(current_user, recipe) do %>
+                    <%= link_to user_recipe_path(recipe.user, recipe) do %>
             <h2 class="card-title"><%= recipe.name %></h2>
           <% end %>
             <%= button_to "REMOVE RECIPE", user_recipe_path(params[:user_id], recipe), method: :delete %>
