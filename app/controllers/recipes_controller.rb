@@ -11,7 +11,10 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    @user = current_user
+    @recipe = Recipe.includes(:recipe_foods).find(params[:id])
+    @foods = @user.foods
+    @recipe_foods = @recipe.recipe_foods.includes(:food)
   end
 
   # POST /recipes
