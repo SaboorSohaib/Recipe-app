@@ -1,0 +1,27 @@
+<section class="shopping-list">
+<h2>General Shopping List for the <%=@recipe.name%> </h1>
+<% if @missing_foods.count ===0 %>
+    <p>All foods are available for this recipe</p>
+<%else%>
+    <div>
+        <p>Amount of food items to buy: <%= @missing_foods.count %></p>
+        <p>Total value of foods needed: $<%= total_price %></p>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @missing_foods.each do |food| %>
+                    <%= <%= render  "food", food:food %>%>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+<%end%>
+<section>
