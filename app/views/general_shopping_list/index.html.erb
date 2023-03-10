@@ -3,7 +3,7 @@
 <% if @missing_foods.count ===0 %>
     <p>All foods are available for this recipe</p>
 <%else%>
-    <div class="">
+    <div class="amount-price">
         <p>Amount of food items to buy: <%= @missing_foods.count %></p>
         <p>Total value of foods needed: $<%= total_price %></p>
     </div>
