@@ -1,26 +1,35 @@
 <h1><%= @recipe.name %></h1>
 <p>Preparation time: <%= @recipe.preparation_time %>hour(s)</p>
 <p>Cooking time: <%= @recipe.cooking_time %>hour(s)</p>
-<p>Public: <%= @recipe.public %></p>
+
+<p>Public: <%= @recipe.public%></p>
 <p>Steps go here...<p><ul><%= @recipe.description %></ul>
-
+    <div class="form-check form-switch">
+      <% if @recipe.public?%>
+        <input class="form-check-input" type="checkbox" name="flexRadioDisabled" id="flexRadioCheckedDisabled" checked disabled>
+      <%else%>
+        <input class="form-check-input" type="checkbox" name="flexRadioDisabled" id="flexRadioCheckedDisabled" disabled>
+      <%end%>
+      <label class="form-check-label fw-bold text-dark" for="flexRadioCheckedDisabled">
+        Public
+      </label>
+    </div>
 <br>
-  <%= button_to "Generate shopping list" %>
-  <br>
-  <%= link_to "Add ingredient", new_user_recipe_recipe_food_path(params[:user_id], params[:id] )%>
+<%= button_to "Generate shopping list" %>
+<br>
+<%= link_to "Add ingredient", new_user_recipe_recipe_food_path(params[:user_id], params[:id] )%>
 <hr>
-
 <table class="table">
     <thead>
       <tr>
-        <th scope="col">Food</th>
+              <th scope="col">Food</th>
         <th scope="col">Quantity</th>
         <th scope="col">Value</th>
         <th scope="col">Actions</th>
       </tr>
     </thead>
 
-            <tbody>
+        <tbody>
       <% @recipe.recipe_foods.each do |recipe_food| %>
         <tr>
           <td><%= recipe_food.food.name %></td>
@@ -31,6 +40,7 @@
               <%= button_to 'Remove', user_recipe_recipe_food_path(params[:user_id], params[:id], recipe_food), method: :delete %>
           </td>
         </tr>
+      <% end %>
   </table>
 
-<%= button_to "Click To Go Back to List Of Recipes", user_recipes_path, method: :get%>
+  <%= button_to "Back to List of Recipes", user_recipes_path, method: :get%>
