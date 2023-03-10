@@ -3,7 +3,7 @@
 <p>Cooking time: <%= @recipe.cooking_time %>hour(s)</p>
 <p>Public: <%= @recipe.public %></p>
 <p>Steps go here...<p><ul><%= @recipe.description %></ul>
-
+ <%= link_to 'General Shoping List', user_recipe_general_shopping_list_index_path(user_id: current_user.id, recipe_id: @recipe.id), class: "general-shopping-list" %>
 <table class="table">
     <thead>
       <tr>
