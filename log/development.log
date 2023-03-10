@@ -11070,3 +11070,366 @@ Processing by RecipesController#public_recipes as HTML
 Completed 200 OK in 27ms (Views: 17.6ms | ActiveRecord: 0.7ms | Allocations: 4845)
 
 
+Started GET "/" for 127.0.0.1 at 2023-03-09 20:01:25 +0430
+  
+ActiveRecord::DatabaseConnectionError (There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+):
+  
+activerecord (7.0.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.4.2) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.4.2) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.4.2) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.4.2) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.4.2) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.2) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2023-03-09 20:02:56 +0430
+  
+ActiveRecord::DatabaseConnectionError (There is an issue connecting to your database with your username/password, username: postgres.
+
+Please check your database configuration to ensure the username/password are valid.
+):
+  
+activerecord (7.0.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:83:in `rescue in new_client'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:77:in `new_client'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/postgresql_adapter.rb:37:in `postgresql_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `public_send'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:656:in `new_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:700:in `checkout_new_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:679:in `try_to_checkout_new_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:640:in `acquire_connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:341:in `checkout'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_pool.rb:181:in `connection'
+activerecord (7.0.4.2) lib/active_record/connection_adapters/abstract/connection_handler.rb:211:in `retrieve_connection'
+activerecord (7.0.4.2) lib/active_record/connection_handling.rb:313:in `retrieve_connection'
+activerecord (7.0.4.2) lib/active_record/connection_handling.rb:280:in `connection'
+activerecord (7.0.4.2) lib/active_record/migration.rb:613:in `connection'
+activerecord (7.0.4.2) lib/active_record/migration.rb:608:in `build_watcher'
+activerecord (7.0.4.2) lib/active_record/migration.rb:590:in `block in call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.2) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.3) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2023-03-09 20:03:12 +0430
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/sohaib/.rvm/gems/ruby-3.2.1/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/sohaib/.rvm/gems/ruby-3.2.1/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.2ms | Allocations: 459)
+Completed 200 OK in 16ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 3227)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-09 20:03:51 +0430
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 20ms (ActiveRecord: 0.0ms | Allocations: 4049)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-03-09 20:03:52 +0430
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.4ms | Allocations: 777)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 22.7ms | Allocations: 3305)
+  Rendered layout layouts/application.html.erb (Duration: 150.3ms | Allocations: 41480)
+Completed 200 OK in 201ms (Views: 152.8ms | ActiveRecord: 24.9ms | Allocations: 50532)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-03-09 20:03:58 +0430
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"abdulsaboorsohaib@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abdulsaboorsohaib@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 856ms (ActiveRecord: 2.3ms | Allocations: 6268)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-09 20:03:59 +0430
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 556)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2759)
+Completed 200 OK in 20ms (Views: 9.3ms | ActiveRecord: 1.2ms | Allocations: 4847)
+
+
+Started GET "/users/1/food" for 127.0.0.1 at 2023-03-09 20:04:00 +0430
+Processing by FoodController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering food/index.html.erb within layouts/application
+  [1m[36mFood Load (1.3ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/food/index.html.erb:12
+  Rendered food/index.html.erb within layouts/application (Duration: 79.1ms | Allocations: 8255)
+  Rendered layout layouts/application.html.erb (Duration: 88.2ms | Allocations: 10455)
+Completed 200 OK in 407ms (Views: 80.0ms | ActiveRecord: 13.4ms | Allocations: 17782)
+
+
+Started GET "/users/1/food/new" for 127.0.0.1 at 2023-03-09 20:04:05 +0430
+Processing by FoodController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering food/new.html.erb within layouts/application
+  Rendered food/new.html.erb within layouts/application (Duration: 13.0ms | Allocations: 1817)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 3940)
+Completed 200 OK in 47ms (Views: 27.4ms | ActiveRecord: 1.2ms | Allocations: 5655)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-09 20:04:31 +0430
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 909)
+  Rendered layout layouts/application.html.erb (Duration: 83.5ms | Allocations: 33968)
+Completed 200 OK in 152ms (Views: 89.2ms | ActiveRecord: 8.2ms | Allocations: 48331)
+
+
+Started GET "/users/:user_id/recipes" for 127.0.0.1 at 2023-03-09 20:05:02 +0430
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (305.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 310.1ms | Allocations: 1093)
+  Rendered layout layouts/application.html.erb (Duration: 319.2ms | Allocations: 3309)
+Completed 200 OK in 335ms (Views: 16.1ms | ActiveRecord: 305.8ms | Allocations: 6834)
+
+
+Started GET "/users/:user_id/recipes/new" for 127.0.0.1 at 2023-03-09 20:05:07 +0430
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (Duration: 29.4ms | Allocations: 3932)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 6080)
+Completed 200 OK in 100ms (Views: 38.6ms | ActiveRecord: 9.2ms | Allocations: 11769)
+
+
+Started GET "/users/:user_id/recipes" for 127.0.0.1 at 2023-03-09 20:05:26 +0430
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 630)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 2751)
+Completed 200 OK in 34ms (Views: 21.0ms | ActiveRecord: 1.6ms | Allocations: 4349)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-09 20:05:48 +0430
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 909)
+  Rendered layout layouts/application.html.erb (Duration: 86.0ms | Allocations: 33523)
+Completed 200 OK in 145ms (Views: 92.2ms | ActiveRecord: 8.5ms | Allocations: 47895)
+
+
+Started GET "/users/:user_id/recipes" for 127.0.0.1 at 2023-03-09 20:06:17 +0430
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1089)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 3305)
+Completed 200 OK in 34ms (Views: 16.2ms | ActiveRecord: 1.7ms | Allocations: 6796)
+
+
+Started GET "/users/:user_id/recipes/new" for 127.0.0.1 at 2023-03-09 20:06:33 +0430
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 3769)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 5917)
+Completed 200 OK in 81ms (Views: 23.9ms | ActiveRecord: 7.7ms | Allocations: 11601)
+
+
+Started GET "/users/:user_id/recipes" for 127.0.0.1 at 2023-03-09 20:06:48 +0430
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>":user_id"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:6
+  Rendered recipes/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 630)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 2752)
+Completed 200 OK in 25ms (Views: 12.7ms | ActiveRecord: 1.0ms | Allocations: 4359)
+
+
+Started GET "/users/:user_id/recipes/:id" for 127.0.0.1 at 2023-03-09 20:06:50 +0430
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>":user_id", "id"=>":id"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:13:in `show'
+Completed 404 Not Found in 16ms (ActiveRecord: 0.8ms | Allocations: 2893)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recipe with 'id'=:id):
+  
+app/controllers/recipes_controller.rb:13:in `show'
+Started GET "/" for 127.0.0.1 at 2023-03-10 14:34:54 +0430
+  [1m[36mActiveRecord::SchemaMigration Pluck (33.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/sohaib/.rvm/gems/ruby-3.2.1/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/sohaib/.rvm/gems/ruby-3.2.1/gems/railties-7.0.4.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 32.3ms | Allocations: 459)
+Completed 200 OK in 244ms (Views: 79.0ms | ActiveRecord: 0.0ms | Allocations: 3227)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-10 14:35:04 +0430
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 105ms (ActiveRecord: 0.0ms | Allocations: 1157)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-03-10 14:35:05 +0430
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 15.9ms | Allocations: 777)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 161.4ms | Allocations: 3307)
+  Rendered layout layouts/application.html.erb (Duration: 341.2ms | Allocations: 36236)
+Completed 200 OK in 711ms (Views: 345.0ms | ActiveRecord: 303.9ms | Allocations: 45307)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-03-10 14:35:16 +0430
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"abdulsaboorsohaib@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (52.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "abdulsaboorsohaib@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/users
+Completed 303 See Other in 622ms (ActiveRecord: 52.8ms | Allocations: 5469)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-10 14:35:17 +0430
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 28.1ms | Allocations: 556)
+  Rendered layout layouts/application.html.erb (Duration: 37.3ms | Allocations: 2791)
+Completed 200 OK in 51ms (Views: 40.3ms | ActiveRecord: 1.1ms | Allocations: 4853)
+
+
+Started GET "/users/1/food" for 127.0.0.1 at 2023-03-10 14:35:19 +0430
+Processing by FoodController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering food/index.html.erb within layouts/application
+  [1m[36mFood Load (48.0ms)[0m  [1m[34mSELECT "foods".* FROM "foods" WHERE "foods"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/food/index.html.erb:12
+  Rendered food/index.html.erb within layouts/application (Duration: 79.7ms | Allocations: 7135)
+  Rendered layout layouts/application.html.erb (Duration: 85.7ms | Allocations: 9336)
+Completed 200 OK in 131ms (Views: 34.1ms | ActiveRecord: 54.2ms | Allocations: 13805)
+
+
+Started GET "/users/1/food/new" for 127.0.0.1 at 2023-03-10 14:35:21 +0430
+Processing by FoodController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering food/new.html.erb within layouts/application
+  Rendered food/new.html.erb within layouts/application (Duration: 28.2ms | Allocations: 1817)
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 3938)
+Completed 200 OK in 43ms (Views: 35.5ms | ActiveRecord: 0.5ms | Allocations: 5628)
+
+
