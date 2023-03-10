@@ -3,4 +3,8 @@ class RecipeFoodsController < ApplicationController
         @recipe_food = RecipeFood.new
         @foods = Food.all
     end
+
+    def create
+
+    end
 end
