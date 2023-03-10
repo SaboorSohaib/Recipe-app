@@ -1,4 +1,7 @@
 class RecipeFoodsController < ApplicationController
+    def index
+        @foods = @user.foods
+    end
     def new
         @foods = Food.all
         @recipe_food = RecipeFood.new
