@@ -9,22 +9,25 @@ class RecipeFoodsController < ApplicationController
 
     def create
         @recipe = Recipe.find(params[:recipe_id])
-        @recipe_food = RecipeFood.new(recipe_id: params[:recipe_id],
-                                      quantity:
-                                      params.require(:recipe_food).permit(:quantity)[:quantity], food_id:
-                                        params.require(:recipe_food).permit(:food_id)[:food_id])
-    
+        @recipe_food = @recipe.recipe_foods.new(recipe_food_params)
         if @recipe_food.save
-          flash[:notice] = 'New Recipe_Food was successfully created'
-          redirect_to user_recipe_path(params[:user_id], params[:recipe_id])
+          flash[:notice] = 'New Food Recipe Has Been Succesfully  added.'
+          redirect_to [@recipe.user, @recipe]
         else
-          render :new
+          redirect_to [@recipe.user, @recipe]
+          flash[:alert] = 'New Food Recipe Failed To Add'
         end
     end
 
     def destroy
+        @recipe = Recipe.find(params[:recipe_id])
         @recipe_food = RecipeFood.find(params[:id]).destroy
-        flash[:notice] = 'The Recipe_Food was successfully deleted'
-        redirect_to user_recipe_path(params[:user_id], params[:recipe_id])
+        respond_to do |format|
+          format.html { redirect_to [@recipe.user, @recipe], notice: 'Ingredient was successfully deleted.' }
+        end
+    end
+
+    def recipe_food_params
+      params.require(:recipe_food).permit(:foods_id, :quantity)
     end
 end
