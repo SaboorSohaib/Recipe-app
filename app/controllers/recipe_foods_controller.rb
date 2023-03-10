@@ -1,7 +1,7 @@
 class RecipeFoodsController < ApplicationController
     def new
-        @recipe_food = RecipeFood.new
         @foods = Food.all
+        @recipe_food = RecipeFood.new
     end
 
     def create
@@ -12,6 +12,7 @@ class RecipeFoodsController < ApplicationController
                                         params.require(:recipe_food).permit(:food_id)[:food_id])
     
         if @recipe_food.save
+          flash[:notice] = 'New Recipe_Food was successfully created'
           redirect_to user_recipe_path(params[:user_id], params[:recipe_id])
         else
           render :new
@@ -19,8 +20,8 @@ class RecipeFoodsController < ApplicationController
     end
 
     def destroy
-        @recipe_food = RecipeFood.find(params[:id])
-        @recipe_food.destroy
+        @recipe_food = RecipeFood.find(params[:id]).destroy
+        flash[:notice] = 'The Recipe_Food was successfully deleted'
         redirect_to user_recipe_path(params[:user_id], params[:recipe_id])
     end
 end
