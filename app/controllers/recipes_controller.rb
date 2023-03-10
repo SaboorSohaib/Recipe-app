@@ -1,7 +1,9 @@
 class RecipesController < ApplicationController
+
+  before_action :current_user, only: %i[index, show]
+  
   # GET /recipes
   def index
-    @user = current_user
     @recipes = @user.recipes
   end
 
@@ -11,7 +13,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @user = current_user
     @recipe = Recipe.includes(:recipe_foods).find(params[:id])
     @foods = @user.foods
     @recipe_foods = @recipe.recipe_foods.includes(:food)
@@ -19,26 +20,22 @@ class RecipesController < ApplicationController
 
   # POST /recipes
   def create
-    @recipe = Recipe.new(recipe_params)
-    @recipe.user = current_user
-
+    @recipe = current_user.recipes.new(recipe_params)
     if @recipe.save
-      flash[:notice] = 'New Recipe was successfully created'
-      redirect_to user_recipes_path(params[:user_id])
+      flash[:notice] = 'New Recipe has been successfuly created.'
+      redirect_to [@recipe.user, @recipe]
     else
-      render :new
+      redirect_to [:new_user_recipe]
+      flash[:alert] = 'New recipe creation failed'
     end
   end
 
   # DELETE /recipes/1
   def destroy
-    @recipe = Recipe.find(params[:id]).destroy
-    flash[:notice] = 'The Recipe was successfully removed'
-    redirect_to user_recipes_path(params[:user_id])
-  end
-
-  def public_recipes
-    @recipes = Recipe.where(public: true)
+    recipe = Recipe.find(params[:id]).destroy
+    respond_to do |format|
+      format.html { redirect_to [current_user, :recipes], notice: 'The Recipe has been successfully deleted.' }
+    end
   end
 
   def recipe_params
@@ -46,7 +43,7 @@ class RecipesController < ApplicationController
   end
 
   # Use callbacks to share common setup
-  def find_recipe
-    @recipe = Recipe.find(params[:id])
+  def current_user
+    @user = current_user
   end
 end
