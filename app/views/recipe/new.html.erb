@@ -1,0 +1,29 @@
+<section class="new-recipe-container">
+  <h1 class="new-recipe-form-title">
+    Create New Recipe
+  </h1>
+
+  <%= form_with model: @recipe, url: recipe_index_path, local: true do |f| %>
+      <h3>
+      <%= f.label :name, class: "recipe-form-label" %>
+      <br>
+      <%= f.text_field :name, placeholder: 'Recipe Name', class: "recipe-form-field    wxl" %>
+      </h3>
+      <h3>
+      <%= f.label :preparation_time, class: "recipe-form-label" %>
+      <br>
+      <%= f.text_field :preparation_time, placeholder: 'Preparation Time', class: "recipe-form-field   wxl" %>
+      </h3>
+      <h3>
+      <%= f.label :cooking_time, class: "recipe-form-label" %>
+      <br>
+      <%= f.text_field :cooking_time, placeholder: 'Cooking Time', class: "recipe-form-field   wxl" %>
+      </h3>
+      <h3>
+      <%= f.label :description, class: "recipe-form-label" %>
+      <br>
+      <%= f.text_field :description, placeholder: 'Description', class: "recipe-form-field   wxl" %>
+      </h3>
+      <%= f.submit 'Submit', class: "recipe-form-submit" %>
+  <% end %>
+</section>

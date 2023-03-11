@@ -1,0 +1,20 @@
+<h1 class="recipe-page-welcome-message" >
+<%= "Hi #{current_user.name}, would you like to add a new Recipe?" %><br>
+</h1>
+<%= link_to 'Add A New Recipe', new_recipe_path, class: "add-new-recipe-btn" %>
+<% @recipes.each_with_index do |recipe, idx| %>
+    <section class= recipes-index-page-container>
+      <div class=recipe-card-container>
+        <div class=recipe-details>
+          <%= link_to recipe_path(recipe.id) do %>
+          <p><%= "RECIPE #{idx+1}" %></p>
+          <% end %>
+          <h2><%= recipe.name %></h2>
+          <%= button_to 'REMOVE', recipe_path(id: recipe.id), method: :delete, class: "remove-recipe-btn"%>
+        </div>
+        <div class=recipe-description>
+          <%= recipe.description %>
+        </div>
+      </div>
+    </section>
+<%end%>

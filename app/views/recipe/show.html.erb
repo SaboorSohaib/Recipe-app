@@ -1,0 +1,52 @@
+<section>
+  <div class=recipe-name-container>
+    <h2 class="recipeShowName"><%= @recipe.name %></h2>
+
+    <%= form_with model: @recipe, url: recipe_path(user_id: current_user.id, id: @recipe.id), local: true, class: "recipe-toggler" do |f| %>
+      <% if @recipe.public %>
+        <%= f.submit 'Private', class: "toggle-On" %>
+      <%else%>
+        <%= f.submit 'Public', class: "toggle-Off" %>
+      <% end %>
+    <% end %>
+  </div>
+  <p class="preparation-text text">
+    Preparation time: <%= @recipe.preparation_time %> mins <br>
+  </p>
+  <p class="cooking-text text">
+    Cooking time: <%= @recipe.cooking_time %> mins <br>
+  </p>
+  <p class="description-text text">
+    <%= @recipe.description %>
+  </p>
+</section>
+<div class=links>
+  <%= link_to 'General Shoping List', general_shopping_list_index_path(recipe_id: @recipe.id), class: "addIngredientLink" %>
+  <%= link_to 'Add ingredient', new_recipe_recipe_food_path(@recipe), class: "addIngredientLink" %>
+</div>
+<hr>
+<table class=table>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Value</th>
+    <th>Actions</th>
+  </tr>
+  <% @recipe_foods.each do |recipe_food| %>
+    <tr>
+      <td><%= recipe_food.food.name %></td>
+      <td>
+        <%= recipe_food.quantity.to_s %>
+        <%= recipe_food.food.measurement_unit%>
+      </td>
+      <td>
+        $
+        <%= recipe_food.food.price.to_i * recipe_food.quantity.to_i %>
+      </td>
+      <td>
+        <%= link_to 'Modify', edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), class: "modify-recipe-btn" %>
+        <%= button_to 'Remove',recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), method: :delete, class: "delete-recipe-btn" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
