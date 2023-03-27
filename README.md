@@ -42,14 +42,14 @@
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://N/A.org/">N/A</a></li>
+    <li>Ruby on Rails</li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li>Ruby</li>
+    <li>Ruby on Rails</li>
   </ul>
 </details>
 
